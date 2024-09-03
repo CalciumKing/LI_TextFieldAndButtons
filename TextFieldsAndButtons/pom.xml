@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.textfieldsandbuttons/com.example.textfieldsandbuttons.HelloApplication
+                                com.example.textfieldsandbuttons/com.example.textfieldsandbuttons.MainApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
