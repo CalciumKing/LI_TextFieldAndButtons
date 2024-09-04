@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.textfieldsandbuttons.WordCountController">
+   <children>
+      <Label fx:id="word_count_label" layoutX="286.0" layoutY="101.0" />
+      <Label fx:id="char_count_label" layoutX="286.0" layoutY="126.0" />
+      <TextArea fx:id="text_input_box" layoutX="200.0" layoutY="143.0" prefHeight="200.0" prefWidth="200.0" promptText="Enter Text Here" />
+      <Button layoutX="178.0" layoutY="361.0" mnemonicParsing="false" onAction="#WordCount" text="Count Words" />
+      <Button layoutX="300.0" layoutY="361.0" mnemonicParsing="false" onAction="#CharCount" text="Count Characters" />
+   </children>
+</AnchorPane>

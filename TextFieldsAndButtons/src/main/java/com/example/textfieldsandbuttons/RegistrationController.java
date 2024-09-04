@@ -5,8 +5,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class RegistrationController {
-    @FXML TextField name_input, email_input, password_input;
-    @FXML Label alert_label;
+    @FXML private TextField name_input, email_input, password_input;
+    @FXML private Label alert_label;
 
     @FXML private void validate() {
         if(!name_input.getText().isEmpty() &&
