@@ -8,7 +8,8 @@ import javafx.scene.control.Label;
 import java.util.Arrays;
 
 public class CalculatorController {
-    @FXML private Label math_label;
+    @FXML
+    private Label math_label;
 
     // region Mr Riley's Code
     double firstNum;
@@ -17,7 +18,7 @@ public class CalculatorController {
     void appendNumber(ActionEvent event) {
         Button button = (Button) event.getSource();
         int num = Integer.parseInt(button.getText());
-        if(isNewNumber) {
+        if (isNewNumber) {
             math_label.setText("");
             math_label.setText(String.valueOf(num));
             isNewNumber = false;
@@ -33,7 +34,7 @@ public class CalculatorController {
     void calculate(ActionEvent event) {
         double secondNum = Double.parseDouble(math_label.getText());
         math_label.setText(firstNum + " " + operator + " " + secondNum);
-        switch(operator) {
+        switch (operator) {
             case "+":
                 firstNum += secondNum;
                 break;
@@ -44,7 +45,7 @@ public class CalculatorController {
                 firstNum *= secondNum;
                 break;
             case "/":
-                if(secondNum != 0)
+                if (secondNum != 0)
                     firstNum /= secondNum;
                 else
                     math_label.setText("Error");
@@ -54,7 +55,8 @@ public class CalculatorController {
     }
     // endregion
 
-    @FXML private void AddMath(ActionEvent event) {
+    @FXML
+    private void AddMath(ActionEvent event) {
         Button button = (Button) event.getSource();
         math_label.setText(math_label.getText() + button.getText());
         /*if("0123456789".contains(button.getText()))
@@ -62,17 +64,19 @@ public class CalculatorController {
         else
             math_label.setText(math_label.getText() + " " + button.getText() + " ");*/
     }
-    @FXML private void Clear() {
+    @FXML
+    private void Clear() {
         math_label.setText("");
     }
-    @FXML private void Equals() {
+    @FXML
+    private void Equals() {
         int numSymbols = 0;
         String[] chars = math_label.getText().split("");
         System.out.println(Arrays.toString(chars));
         String[] updated = new String[chars.length];
 
-        for(int i = 0; i < math_label.getText().length(); i++) {
-            switch(chars[i].charAt(0)) {
+        for (int i = 0; i < math_label.getText().length(); i++) {
+            switch (chars[i].charAt(0)) {
                 case '+':
                     updated[i] = String.valueOf(Integer.parseInt(chars[i - 1]) + Integer.parseInt(chars[i + 1]));
                     numSymbols++;
@@ -94,7 +98,8 @@ public class CalculatorController {
                     break;
             }
         }
-        for(String s : updated)
+
+        for (String s : updated)
             math_label.setText(math_label.getText() + s);
 
         /*if(numSymbols >= 0)
